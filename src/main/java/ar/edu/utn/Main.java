@@ -156,8 +156,8 @@ public class Main {
         recomendaciones = recomendar(id_lector,libros, generoFavorito, lectorGenero); //Obtiene los libros para recomendar
         System.out.println("Los libros recomendados son: ");
         for(Libro lib: recomendaciones){
-            System.out.println("      "+lib.getNombre());
+            System.out.println("      "+lib.getNombre()+ " y su precio es: " + lib.getPrecio());
         }
-        
+
     }
 }
