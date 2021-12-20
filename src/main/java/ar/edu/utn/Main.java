@@ -68,8 +68,9 @@ public class Main {
             for(Integer leido: lector.getLibrosLeidos()){  //Recorre los libros leidos
                 Libro l = libros.get(leido);  //Guarda el libro correspondiente al id
                 generos.add(l.getGenero()); //Agrega el genero del libro leido
-                lectorGenero.put(lector.getId(), generos); //Inserta en el map el id junto con los generos leidos
+                //lectorGenero.put(lector.getId(), generos); //Inserta en el map el id junto con los generos leidos
             }
+            lectorGenero.put(lector.getId(), generos); //Inserta en el map el id junto con los generos leidos ESTO LO MOVI AFUERA
         }
         return lectorGenero;
     }
