@@ -61,13 +61,13 @@ public class Main {
         return lectores;
     }
 
-    public static Map<Integer, ArrayList<String>> relacionArchivos(ArrayList<Lector> lectores, ArrayList<Libro>libros){
-        Map<Integer, ArrayList<String>> lectorGenero = new HashMap<Integer, ArrayList<String>>(); //La key es el id del lector, Value es el conjunto de generos de los libros leidos
+    public static Map<Integer, ArrayList<Libro>> relacionArchivos(ArrayList<Lector> lectores, ArrayList<Libro>libros){
+        Map<Integer, ArrayList<Libro>> lectorGenero = new HashMap<Integer, ArrayList<Libro>>(); //La key es el id del lector, Value es el conjunto de generos de los libros leidos
         for(Lector lector: lectores){  //Recorre los lectores
-            ArrayList<String> generos = new ArrayList<String>(); //Guarda los generos asociados al lector
+            ArrayList<Libro> generos = new ArrayList<Libro>(); //Guarda los generos asociados al lector
             for(Integer leido: lector.getLibrosLeidos()){  //Recorre los libros leidos
                 Libro l = libros.get(leido);  //Guarda el libro correspondiente al id
-                generos.add(l.getGenero()); //Agrega el genero del libro leido
+                generos.add(l); //Agrega el genero del libro leido
                 //lectorGenero.put(lector.getId(), generos); //Inserta en el map el id junto con los generos leidos
             }
             lectorGenero.put(lector.getId(), generos); //Inserta en el map el id junto con los generos leidos ESTO LO MOVI AFUERA
@@ -86,10 +86,14 @@ public class Main {
         return id;
     }
 
-    public static String generoRecomendado(int id_lector, Map<Integer, ArrayList<String>> lectorGenero){
+    public static String generoRecomendado(int id_lector, Map<Integer, ArrayList<Libro>> lectorGenero){
         String genFav = "";
+        ArrayList<Libro> libros = new ArrayList<Libro>();
         ArrayList<String> generos = new ArrayList<String>();
-        generos = lectorGenero.get(id_lector);
+        libros = lectorGenero.get(id_lector);
+        for (Libro libro: libros){
+            generos.add(libro.getGenero());
+        }
         int [] frecuencia = new int [4];
         frecuencia[0] = Collections.frequency(generos, "FICCION Y LITERATURA");
         System.out.println(Collections.frequency(generos, "FICCION Y LITERATURA"));
@@ -119,21 +123,41 @@ public class Main {
         return genFav;
     }
 
+    public static Set<Libro> recomendar(int id_lector, ArrayList<Libro> libros, String genFavorito, Map<Integer, ArrayList<Libro>> lectorGenero){
+        Set<Libro> librosRecomendados = new HashSet<Libro>();
+        ArrayList<Libro> leidos = new ArrayList<Libro>();
+        for(Libro libro: libros){
+            if (genFavorito.equals(libro.getGenero())){
+                librosRecomendados.add(libro);
+            }
+        }
+        leidos = lectorGenero.get(id_lector);
+        for(Libro libEliminar: leidos){
+            librosRecomendados.remove(libEliminar);
+        }
+        return librosRecomendados;
+    }
+
+
     public static void main(String[] args) throws IOException {
         String NyA = "Ruiz Juan";
         ArrayList<Libro> libros = new ArrayList<Libro>();
         libros=archivoLibros();                                 //ArrayList del archivo Libros.
         ArrayList<Lector> lectores = new ArrayList<Lector>();
         lectores=archivoLectores();                             //ArrayList del archivo lectores.
-        Map<Integer, ArrayList<String>> lectorGenero = new HashMap<Integer, ArrayList<String>>(); //La key es el id del lector, Value es el conjunto de generos de los libros leidos
+        Map<Integer, ArrayList<Libro>> lectorGenero = new HashMap<Integer, ArrayList<Libro>>(); //La key es el id del lector, Value es el conjunto de generos de los libros leidos
         lectorGenero=relacionArchivos(lectores,libros);         //Enlaza genero de libros a los lectores
         int id_lector = buscarId(NyA,lectores);                 //Busca el id del lector elegido.
         //System.out.println("El id es: " + id_lector);
         //System.out.println(lectorGenero);
         String generoFavorito = generoRecomendado(id_lector, lectorGenero);   //Busca el genero favorito
         System.out.println(generoFavorito);
-
-
-
+        Set<Libro> recomendaciones = new HashSet<Libro>();
+        recomendaciones = recomendar(id_lector,libros, generoFavorito, lectorGenero); //Obtiene los libros para recomendar
+        System.out.println("Los libros recomendados son: ");
+        for(Libro lib: recomendaciones){
+            System.out.println("      "+lib.getNombre());
+        }
+        
     }
 }
