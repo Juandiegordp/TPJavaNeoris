@@ -2,12 +2,8 @@ package ar.edu.utn;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 
@@ -15,8 +11,8 @@ public class Main {
 
     public static ArrayList<Libro> archivoLibros(){
         String SEPARADOR = ";"; // EL separador del archivo CSV
-        BufferedReader bufferLectura = null;
-        ArrayList<Libro> libros = new ArrayList<Libro>();
+        BufferedReader bufferLectura;
+        ArrayList<Libro> libros = new ArrayList<>();
         try {
             bufferLectura = new BufferedReader(new FileReader("src/main/resources/libros.csv")); //Carga en el buffer el .csv
             String linea = bufferLectura.readLine(); //Lee una linea
@@ -29,6 +25,7 @@ public class Main {
 
             }
             System.out.println("Los libros en la coleccion son: "+libros); //Muestra los libros con su id
+            bufferLectura.close();
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -38,14 +35,14 @@ public class Main {
 
     public static ArrayList<Lector> archivoLectores() {
         String SEPARADOR = ";"; // EL separador del archivo CSV
-        BufferedReader bufferLectura = null;
-        ArrayList<Lector> lectores = new ArrayList<Lector>();
+        BufferedReader bufferLectura;
+        ArrayList<Lector> lectores = new ArrayList<>();
         try {
             bufferLectura = new BufferedReader(new FileReader("src/main/resources/lectores.csv")); //Carga en el buffer el .csv
             String linea = bufferLectura.readLine(); //Lee una linea
             while (linea != null) {     //Sale cuando ya no hay lineas que leer
                 String[] campos = linea.split(SEPARADOR); // Sepapar la linea leída con el separador definido previamente
-                ArrayList<Integer> leidos = new ArrayList<Integer>();
+                ArrayList<Integer> leidos = new ArrayList<>();
                 for (int i = 3; i < campos.length; i++) {
                     leidos.add(Integer.parseInt(campos[i]));
                 }
@@ -62,9 +59,9 @@ public class Main {
     }
 
     public static Map<Integer, ArrayList<Libro>> relacionArchivos(ArrayList<Lector> lectores, ArrayList<Libro>libros){
-        Map<Integer, ArrayList<Libro>> lectorGenero = new HashMap<Integer, ArrayList<Libro>>(); //La key es el id del lector, Value es el conjunto de generos de los libros leidos
+        Map<Integer, ArrayList<Libro>> lectorGenero = new HashMap<>(); //La key es el id del lector, Value es el conjunto de generos de los libros leidos
         for(Lector lector: lectores){  //Recorre los lectores
-            ArrayList<Libro> generos = new ArrayList<Libro>(); //Guarda los generos asociados al lector
+            ArrayList<Libro> generos = new ArrayList<>(); //Guarda los generos asociados al lector
             for(Integer leido: lector.getLibrosLeidos()){  //Recorre los libros leidos
                 Libro l = libros.get(leido);  //Guarda el libro correspondiente al id
                 generos.add(l); //Agrega el genero del libro leido
@@ -88,9 +85,8 @@ public class Main {
 
     public static String generoRecomendado(int id_lector, Map<Integer, ArrayList<Libro>> lectorGenero){
         String genFav = "";
-        ArrayList<Libro> libros = new ArrayList<Libro>();
-        ArrayList<String> generos = new ArrayList<String>();
-        libros = lectorGenero.get(id_lector);
+        ArrayList<String> generos = new ArrayList<>();
+        ArrayList<Libro> libros = lectorGenero.get(id_lector);
         for (Libro libro: libros){
             generos.add(libro.getGenero());
         }
@@ -109,7 +105,6 @@ public class Main {
                 indice = x;
             }
         }
-        //indice = 2 ;
         switch (indice){
             case 0: genFav = "FICCION Y LITERATURA";
             break;
@@ -124,8 +119,8 @@ public class Main {
     }
 
     public static Set<Libro> recomendar(int id_lector, ArrayList<Libro> libros, String genFavorito, Map<Integer, ArrayList<Libro>> lectorGenero){
-        Set<Libro> librosRecomendados = new HashSet<Libro>();
-        ArrayList<Libro> leidos = new ArrayList<Libro>();
+        Set<Libro> librosRecomendados = new HashSet<>();
+        ArrayList<Libro> leidos;
         for(Libro libro: libros){
             if (genFavorito.equals(libro.getGenero())){
                 librosRecomendados.add(libro);
@@ -138,26 +133,35 @@ public class Main {
         return librosRecomendados;
     }
 
+    public static void imprimirRecomendaciones(int id_lector, ArrayList<Lector>lectores, Set<Libro>Recomendaciones) throws IOException{
+        Lector lector = lectores.get(id_lector);
+        FileWriter csvWriter = new FileWriter("src/main/resources/recomendaciones.csv");
+        csvWriter.append("Lector: " + lector.getApellido() + ", "+ lector.getNombre() + "\n");
+        csvWriter.append("Recomendaciones: \n");
+        for(Libro recomendacion: Recomendaciones){
+            csvWriter.append("      " + recomendacion.getNombre() + "   y su precio es: " + recomendacion.getPrecio() +"\n" );
+        }
+        csvWriter.flush();
+        csvWriter.close();
+    }
 
     public static void main(String[] args) throws IOException {
         String NyA = "Ruiz Juan";
-        ArrayList<Libro> libros = new ArrayList<Libro>();
-        libros=archivoLibros();                                 //ArrayList del archivo Libros.
-        ArrayList<Lector> lectores = new ArrayList<Lector>();
-        lectores=archivoLectores();                             //ArrayList del archivo lectores.
-        Map<Integer, ArrayList<Libro>> lectorGenero = new HashMap<Integer, ArrayList<Libro>>(); //La key es el id del lector, Value es el conjunto de generos de los libros leidos
-        lectorGenero=relacionArchivos(lectores,libros);         //Enlaza genero de libros a los lectores
+        ArrayList<Libro>  libros=archivoLibros();                                 //ArrayList del archivo Libros.
+        ArrayList<Lector> lectores = archivoLectores();                             //ArrayList del archivo lectores.
+        //La key es el id del lector, Value es el conjunto de generos de los libros leidos
+        Map<Integer, ArrayList<Libro>> lectorGenero=relacionArchivos(lectores,libros);         //Enlaza genero de libros a los lectores
         int id_lector = buscarId(NyA,lectores);                 //Busca el id del lector elegido.
-        //System.out.println("El id es: " + id_lector);
-        //System.out.println(lectorGenero);
+        /*System.out.println("El id es: " + id_lector);
+        System.out.println(lectorGenero);*/
         String generoFavorito = generoRecomendado(id_lector, lectorGenero);   //Busca el genero favorito
-        System.out.println(generoFavorito);
-        Set<Libro> recomendaciones = new HashSet<Libro>();
-        recomendaciones = recomendar(id_lector,libros, generoFavorito, lectorGenero); //Obtiene los libros para recomendar
-        System.out.println("Los libros recomendados son: ");
+        //System.out.println(generoFavorito);
+        Set<Libro> recomendaciones = recomendar(id_lector,libros, generoFavorito, lectorGenero); //Obtiene los libros para recomendar
+       /* System.out.println("Los libros recomendados son: ");
         for(Libro lib: recomendaciones){
             System.out.println("      "+lib.getNombre()+ " y su precio es: " + lib.getPrecio());
-        }
+        }*/
+        imprimirRecomendaciones(id_lector, lectores, recomendaciones);
 
     }
 }
