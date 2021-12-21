@@ -15,45 +15,20 @@ public class Lector {
         this.librosLeidos = librosLeidos;
     }
 
-    public int getCod() {
-        return cod;
-    }
-
-    public void setCod(int cod) {
-        this.cod = cod;
-    }
 
     public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public ArrayList<Libro> getLibrosLeidos() {
         return librosLeidos;
     }
 
-    public void setLibrosLeidos(ArrayList<Libro> librosLeidos) {
-        this.librosLeidos = librosLeidos;
-    }
 
-    @Override
-    public String toString() {
-        return "Lector{" +
-                "cod=" + cod +
-                ", apellido='" + apellido + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", librosLeidos=" + librosLeidos +
-                '}';
-    }
 }
