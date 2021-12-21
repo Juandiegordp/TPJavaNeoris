@@ -1,29 +1,20 @@
 package ar.edu.utn;
 
 public class Libro {
-    private Integer id;
+    private Integer cod;
     private String nombre;
     private String autor;
     private String genero;
     private int stock;
     private float precio;
 
-    public Libro(int id, String nombre, String autor, String genero, int stock, float precio) {
-        this.id = id;
+    public Libro(int cod, String nombre, String autor, String genero, int stock, float precio) {
+        this.cod = cod;
         this.nombre = nombre;
         this.autor = autor;
         this.genero = genero;
         this.stock = stock;
         this.precio = precio;
-    }
-
-    public Libro() {
-        this.id = null;
-        this.nombre = "";
-        this.autor = "";
-        this.genero = "";
-        this.stock = 0;
-        this.precio = 0;
     }
 
     public String getNombre() {
@@ -66,18 +57,18 @@ public class Libro {
         this.precio = precio;
     }
 
-    public int getId() {
-        return id;
+    public int getCod() {
+        return cod;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCod(int id) {
+        this.cod = id;
     }
 
     @Override
     public String toString() {
         return "Libro{" +
-                "id=" + id +
+                "cod=" + cod +
                 ", nombre='" + nombre + '\'' +
                 ", autor='" + autor + '\'' +
                 ", genero='" + genero + '\'' +

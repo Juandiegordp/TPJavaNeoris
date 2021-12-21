@@ -3,32 +3,24 @@ package ar.edu.utn;
 import java.util.ArrayList;
 
 public class Lector {
-    private int id;
+    private int cod;
     private String apellido;
     private String nombre;
-    private ArrayList<Integer> librosLeidos;
+    private ArrayList<Libro> librosLeidos; //Coleccion de libros leidos por el lector
 
-    public Lector(int id, String apellido, String nombre, ArrayList<Integer> librosLeidos) {
-        this.id = id;
+    public Lector(int cod, String apellido, String nombre, ArrayList<Libro> librosLeidos) {
+        this.cod = cod;
         this.apellido = apellido;
         this.nombre = nombre;
         this.librosLeidos = librosLeidos;
     }
 
-    public int getId() {
-        return id;
+    public int getCod() {
+        return cod;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCod(int cod) {
+        this.cod = cod;
     }
 
     public String getApellido() {
@@ -39,20 +31,28 @@ public class Lector {
         this.apellido = apellido;
     }
 
-    public ArrayList<Integer> getLibrosLeidos() {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Libro> getLibrosLeidos() {
         return librosLeidos;
     }
 
-    public void setLibrosLeidos(ArrayList<Integer> librosLeidos) {
+    public void setLibrosLeidos(ArrayList<Libro> librosLeidos) {
         this.librosLeidos = librosLeidos;
     }
 
     @Override
     public String toString() {
         return "Lector{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
+                "cod=" + cod +
                 ", apellido='" + apellido + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", librosLeidos=" + librosLeidos +
                 '}';
     }
