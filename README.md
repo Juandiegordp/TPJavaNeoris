@@ -1,8 +1,9 @@
 # TPJavaNeoris
 
 Grupo 2: 
-  Duranti, Norberto. \n
-  Juarez, Florencia. \n
+  Duranti, Norberto. 
+  Juarez, Florencia. 
+
   Ruiz Di Paolo, Juan Diego.
   Vega, Solana.
   
