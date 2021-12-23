@@ -9,12 +9,12 @@ import java.util.*;
 
 public class Main {
 
-    public static ArrayList<Libro> archivoLibros(){
+    public static ArrayList<Libro> archivoLibros(String pathArchivoLibros){
         String SEPARADOR = ";"; // Indica el simbolo utilizado como separador en el archivo CSV
         BufferedReader bufferLectura;
         ArrayList<Libro> libros = new ArrayList<>();
         try {
-            bufferLectura = new BufferedReader(new FileReader("src/main/resources/libros.csv")); //Carga en el buffer el .csv
+            bufferLectura = new BufferedReader(new FileReader(pathArchivoLibros)); //Carga en el buffer el .csv
             String linea = bufferLectura.readLine(); //Lee una linea
             while (linea != null) {     //La condicion hace que salga cuando ya no hay lineas que leer
                 String[] campos = linea.split(SEPARADOR); // Separa la linea leída con el separador definido previamente
@@ -31,12 +31,12 @@ public class Main {
         return libros;
     }
 
-    public static ArrayList<Lector> archivoLectores(ArrayList<Libro>  libros) {
+    public static ArrayList<Lector> archivoLectores(ArrayList<Libro>  libros, String pathArchivoLectores) {
         String SEPARADOR = ";";          // Indica el simbolo utilizado como separador en el archivo CSV
         BufferedReader bufferLectura;
         ArrayList<Lector> lectores = new ArrayList<>();
         try {
-            bufferLectura = new BufferedReader(new FileReader("src/main/resources/lectores.csv")); //Carga en el buffer el .csv
+            bufferLectura = new BufferedReader(new FileReader(pathArchivoLectores)); //Carga en el buffer el .csv
             String linea = bufferLectura.readLine();        //Lee una linea
             while (linea != null) {                         //La condicion hace que salga cuando ya no hay lineas que leer
                 String[] campos = linea.split(SEPARADOR);   // Separa la linea leída con el separador definido previamente
@@ -59,8 +59,8 @@ public class Main {
         return lectores;
     }
 
-    public static void imprimirRecomendaciones(ArrayList<Recomendador> recomendaciones) throws IOException{
-        FileWriter csvWriter = new FileWriter("src/main/resources/recomendaciones.csv");
+    public static void imprimirRecomendaciones(ArrayList<Recomendador> recomendaciones, String pathArchivoRecomendaciones) throws IOException{
+        FileWriter csvWriter = new FileWriter(pathArchivoRecomendaciones);
         for(Recomendador recomendacion: recomendaciones){
             csvWriter.append("Lector: " + recomendacion.getLector().getApellido() + ", "+ recomendacion.getLector().getNombre() + "\n");        //Vuelca NyA del lector
             csvWriter.append("Recomendaciones: \n");
@@ -75,13 +75,21 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        ArrayList<Libro>  libros = archivoLibros();                     //Carga los libros.
-        ArrayList<Lector> lectores = archivoLectores(libros);           //Carga los lectores.
+        ArrayList<Libro>  libros = archivoLibros(args[0]);                     //Carga los libros.
+        ArrayList<Lector> lectores = archivoLectores(libros,args[1]);           //Carga los lectores.
         ArrayList<Recomendador> recomendaciones = new ArrayList<>();    //Coleccion de recomendaciones.
-        for (Lector lector: lectores){                                  //Recorre los lectores para hacer la recomendacion a cada uno.
+
+        for (Lector lector : lectores) {                                  //Recorre los lectores para hacer la recomendacion a cada uno.
             Recomendador recomienda = new Recomendador(lector, libros); //Genera la recomendacion.
+            if (args[3].equals("Genero")) {
+                recomienda.recomendarGenero(libros);
+            }else if(args[3].equals("Aleatorio")){
+                recomienda.recomendarAleatorio(libros);
+            }else {
+                System.out.println("Se ingreso el tipo de recomendacion de forma erronea");
+            }
             recomendaciones.add(recomienda);                            //Agrega la recomendacion a la coleccion.
         }
-        imprimirRecomendaciones(recomendaciones);                       //Vuelca las recomendaciones a un archivo.
+        imprimirRecomendaciones(recomendaciones, args[2]);                       //Vuelca las recomendaciones a un archivo.*/
     }
 }

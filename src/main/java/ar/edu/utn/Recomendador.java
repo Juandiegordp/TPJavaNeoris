@@ -3,24 +3,24 @@ import java.util.*;
 
 public class Recomendador {
     private Lector lector;
-    private Set<Libro> recomendaciones;
+    private ArrayList<Libro> recomendaciones;
 
     public Recomendador(Lector lector, ArrayList<Libro> libros) {
         this.lector = lector;
-        this.recomendaciones = recomendar(libros); //Coleccion de libros recomendados para el lector.
+        this.recomendaciones = new ArrayList<Libro>(); //Coleccion de libros recomendados para el lector.
     }
 
     public Lector getLector() {
         return lector;
     }
 
-    public Set<Libro> getRecomendaciones() {
+    public ArrayList<Libro> getRecomendaciones() {
         return recomendaciones;
     }
 
-    public Set<Libro> recomendar(ArrayList<Libro> libros){
+    public void recomendarGenero(ArrayList<Libro> libros){
         String genFavorito = generoRecomendado();           //Obtiene el genero recomendado
-        Set<Libro> librosRecomendados = new HashSet<>();    //Coleccion para las recomendaciones.
+        ArrayList<Libro> librosRecomendados = new ArrayList<>();    //Coleccion para las recomendaciones.
         for(Libro libro: libros){                           //Revisa todos los libros que coincida genero y los guarda.
             if (genFavorito.equals(libro.getGenero())){
                 librosRecomendados.add(libro);
@@ -29,7 +29,22 @@ public class Recomendador {
         for(Libro libEliminar: this.lector.getLibrosLeidos()){  //Elimina los libros que ya fueron leidos del genero
             librosRecomendados.remove(libEliminar);
         }
-        return librosRecomendados;
+        setRecomendaciones(librosRecomendados);
+    }
+
+    public void recomendarAleatorio(ArrayList<Libro> libros){
+        ArrayList<Libro> librosRecomendados = new ArrayList<>();    //Coleccion para las recomendaciones.
+        for(Libro libro: libros){                           //Revisa todos los libros que coincida genero y los guarda.
+            librosRecomendados.add(libro);
+        }
+        for(Libro libEliminar: this.lector.getLibrosLeidos()){  //Elimina los libros que ya fueron leidos del genero
+            librosRecomendados.remove(libEliminar);
+        }
+        int random = new Random().nextInt(librosRecomendados.size());
+        Libro libRecomendado = librosRecomendados.get(random);
+        librosRecomendados.clear();
+        librosRecomendados.add(libRecomendado);
+        setRecomendaciones(librosRecomendados);
     }
 
     public String generoRecomendado(){
@@ -64,4 +79,17 @@ public class Recomendador {
         }
         return genFav;
     }
+
+    public void setRecomendaciones(ArrayList<Libro> recomendaciones) {
+        this.recomendaciones = recomendaciones;
+    }
+
+    @Override
+    public String toString() {
+        return "Recomendador{" +
+                "lector=" + lector +
+                ", recomendaciones=" + recomendaciones +
+                '}';
+    }
 }
+

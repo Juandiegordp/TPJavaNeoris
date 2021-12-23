@@ -35,4 +35,15 @@ public class Libro {
         return cod;
     }
 
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "cod=" + cod +
+                ", nombre='" + nombre + '\'' +
+                ", autor='" + autor + '\'' +
+                ", genero='" + genero + '\'' +
+                ", stock=" + stock +
+                ", precio=" + precio +
+                '}';
+    }
 }
