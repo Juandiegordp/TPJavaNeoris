@@ -84,12 +84,5 @@ public class Recomendador {
         this.recomendaciones = recomendaciones;
     }
 
-    @Override
-    public String toString() {
-        return "Recomendador{" +
-                "lector=" + lector +
-                ", recomendaciones=" + recomendaciones +
-                '}';
-    }
 }
 
