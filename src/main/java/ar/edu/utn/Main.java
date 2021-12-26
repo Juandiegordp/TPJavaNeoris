@@ -18,7 +18,7 @@ public class Main {
             String linea = bufferLectura.readLine(); //Lee una linea
             while (linea != null) {     //La condicion hace que salga cuando ya no hay lineas que leer
                 String[] campos = linea.split(SEPARADOR); // Separa la linea leída con el separador definido previamente
-                Libro libro = new Libro(Integer.parseInt(campos[0]), campos[1], campos[2], campos[3], Integer.parseInt(campos[4]), Float.parseFloat(campos[5])); //Instancia un libro
+                Libro libro = new Libro(Integer.parseInt(campos[0]), campos[1], campos[2], campos[3], Float.parseFloat(campos[4])); //Instancia un libro
                 libros.add(libro); // Agrega el libro a la coleccion.
                 linea = bufferLectura.readLine(); // Volver a leer otra línea
 

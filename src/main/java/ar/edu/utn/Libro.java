@@ -5,15 +5,13 @@ public class Libro {
     private String nombre;
     private String autor;
     private String genero;
-    private int stock;
     private float precio;
 
-    public Libro(int cod, String nombre, String autor, String genero, int stock, float precio) {
+    public Libro(int cod, String nombre, String autor, String genero, float precio) {
         this.cod = cod;
         this.nombre = nombre;
         this.autor = autor;
         this.genero = genero;
-        this.stock = stock;
         this.precio = precio;
     }
 
@@ -35,15 +33,4 @@ public class Libro {
         return cod;
     }
 
-    @Override
-    public String toString() {
-        return "Libro{" +
-                "cod=" + cod +
-                ", nombre='" + nombre + '\'' +
-                ", autor='" + autor + '\'' +
-                ", genero='" + genero + '\'' +
-                ", stock=" + stock +
-                ", precio=" + precio +
-                '}';
-    }
 }
