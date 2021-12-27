@@ -18,7 +18,7 @@ public class Recomendador {
         return recomendaciones;
     }
 
-    public void recomendarGenero(ArrayList<Libro> libros){
+    public void recomendarGenero(ArrayList<Libro> libros) throws NoHayRecomendaciones{
         String genFavorito = generoRecomendado();           //Obtiene el genero recomendado
         ArrayList<Libro> librosRecomendados = new ArrayList<>();    //Coleccion para las recomendaciones.
         for(Libro libro: libros){                           //Revisa todos los libros que coincida genero y los guarda.
@@ -29,7 +29,12 @@ public class Recomendador {
         for(Libro libEliminar: this.lector.getLibrosLeidos()){  //Elimina los libros que ya fueron leidos del genero
             librosRecomendados.remove(libEliminar);
         }
-        setRecomendaciones(librosRecomendados);
+        if (librosRecomendados.isEmpty()){
+            String rta = ("El lector: " + this.lector.getApellido() + ", " + this.lector.getNombre() + " no posee recomendaciones");
+            throw new NoHayRecomendaciones(rta);
+        }else{
+            setRecomendaciones(librosRecomendados);
+        }
     }
 
     public void recomendarAleatorio(ArrayList<Libro> libros){
