@@ -1,0 +1,14 @@
+2021-12-27 16:50:55.166 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 16:50:55.167 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector JUAREZ, MARIA FLORENCIA con exito.
+2021-12-27 16:54:13.300 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 16:54:13.301 [main] ERROR ar.edu.utn.Recomendador - El lector Ruiz, Francisco no posee recomendaciones.
+2021-12-27 16:54:13.301 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 16:54:13.301 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector JUAREZ, MARIA FLORENCIA con exito.
+2021-12-27 16:55:49.367 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 16:55:49.368 [main] ERROR ar.edu.utn.Recomendador - El lector Ruiz, Francisco no posee recomendaciones.
+2021-12-27 16:55:49.368 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 16:55:49.368 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector JUAREZ, MARIA FLORENCIA con exito.
+2021-12-27 16:56:32.113 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 16:56:32.114 [main] ERROR ar.edu.utn.Recomendador - El lector Ruiz, Francisco no posee recomendaciones.
+2021-12-27 16:56:32.114 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 16:56:32.114 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector JUAREZ, MARIA FLORENCIA con exito.
