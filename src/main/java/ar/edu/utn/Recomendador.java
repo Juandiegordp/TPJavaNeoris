@@ -1,7 +1,13 @@
 package ar.edu.utn;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 
 public class Recomendador {
+
+    final static Logger log = LoggerFactory.getLogger(Recomendador.class);
+
     private Lector lector;
     private ArrayList<Libro> recomendaciones;
 
@@ -19,6 +25,7 @@ public class Recomendador {
     }
 
     public void recomendarGenero(ArrayList<Libro> libros) throws NoHayRecomendaciones{
+        log.debug("Inicia proceso de recomendacion");
         String genFavorito = generoRecomendado();           //Obtiene el genero recomendado
         ArrayList<Libro> librosRecomendados = new ArrayList<>();    //Coleccion para las recomendaciones.
         for(Libro libro: libros){                           //Revisa todos los libros que coincida genero y los guarda.
@@ -31,13 +38,16 @@ public class Recomendador {
         }
         if (librosRecomendados.isEmpty()){
             String rta = ("El lector: " + this.lector.getApellido() + ", " + this.lector.getNombre() + " no posee recomendaciones");
+            log.error("El lector " + this.lector.getApellido() + ", " + this.lector.getNombre() + " no posee recomendaciones.");
             throw new NoHayRecomendaciones(rta);
         }else{
             setRecomendaciones(librosRecomendados);
+            log.info("Se obtuvieron las recomendaciones por genero para el lector " + this.lector.getApellido() + ", " + this.lector.getNombre() + " con exito.");
         }
     }
 
     public void recomendarAleatorio(ArrayList<Libro> libros){
+        log.debug("Inicia proceso de recomendacion");
         ArrayList<Libro> librosRecomendados = new ArrayList<>();    //Coleccion para las recomendaciones.
         for(Libro libro: libros){                           //Revisa todos los libros que coincida genero y los guarda.
             librosRecomendados.add(libro);
@@ -50,6 +60,7 @@ public class Recomendador {
         librosRecomendados.clear();
         librosRecomendados.add(libRecomendado);
         setRecomendaciones(librosRecomendados);
+        log.info("Se obtuvo la recomendacion para el lector " + this.lector.getApellido() + ", " + this.lector.getNombre() + " con exito.");
     }
 
     public String generoRecomendado(){
