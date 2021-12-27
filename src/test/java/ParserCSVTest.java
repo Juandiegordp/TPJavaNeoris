@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 
-public class ParcerCSVTest {
+public class ParserCSVTest {
     private ParserCSV parser;
     private ParserCSV lectores;
 
@@ -45,4 +45,6 @@ public class ParcerCSVTest {
         String linea = "11;TE REGALO LO QUE SE TE ANTOJE;MENDEZ,CONNY;ESOTERISMO;458;20";
         parser.parseLine(linea);
     }
+
+
 }

@@ -16,6 +16,7 @@ public class RecomendadorTest {
     private Libro libro4;
     private Recomendador noRecom;
     private Lector lector2;
+    private Recomendador filtro;
 
 
     @Before
@@ -34,9 +35,10 @@ public class RecomendadorTest {
         this.libros.add(libro2);
         this.libros.add(libro3);
         this.libros.add(libro4);
-        this.recom = new Recomendador(this.lector,this.libros);
+        this.recom = new Recomendador(this.lector);
         this.lector2 = new Lector(125,"Ruiz","Francisco",libros);
-        this.noRecom = new Recomendador(this.lector2, this.libros);
+        this.noRecom = new Recomendador(this.lector2);
+        this.filtro = new Recomendador();
 
     }
     @Test
@@ -60,6 +62,17 @@ public class RecomendadorTest {
         librosleidos.add(this.libro3);
         librosleidos.add(this.libro4);
         noRecom.recomendarGenero(libros);
+    }
+
+    @Test
+    public void testFiltrado() throws Exception{
+        ArrayList<Libro> librosFiltrados = new ArrayList<>();
+        librosFiltrados.add(this.libro1);
+        librosFiltrados.add(this.libro2);
+        librosFiltrados.add(this.libro4);
+        filtro.filtrarGenero("ESOTERISMO", libros);
+        assertEquals("Fallo",librosFiltrados,this.filtro.getRecomendaciones());
+
     }
 }
 

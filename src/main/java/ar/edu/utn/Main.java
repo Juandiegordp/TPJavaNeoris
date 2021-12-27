@@ -31,6 +31,18 @@ public class Main {
         csvWriter.close();
     }
 
+    public static void imprimirFiltrado(Recomendador filtrado, String pathArchivoRecomendaciones, String genero) throws IOException{
+        FileWriter csvWriter = new FileWriter(pathArchivoRecomendaciones);
+        csvWriter.append("Los libros del genero " + genero + " son: " + "\n");
+        csvWriter.append("\n");
+        csvWriter.append("\n");
+        for(Libro librosRecomendados: filtrado.getRecomendaciones()){
+            csvWriter.append("      " + librosRecomendados.getNombre() + "   y su precio es: " + librosRecomendados.getPrecio() +"\n" );    //Vuelca las recomendaciones
+        }
+        csvWriter.flush();
+        csvWriter.close();
+    }
+
     public static void main(String[] args) throws IOException, NoHayRecomendaciones {
 
         ArgumentParser parser = ArgumentParsers.newFor("csvParser").build()
@@ -44,9 +56,12 @@ public class Main {
         parser.addArgument("pathRecomendaciones")
                 .type(String.class).required(true)
                 .help("Ruta del archivo recomendaciones");
-        parser.addArgument("tipoRecomendador")
-                .type(String.class).required(true).choices("Aleatorio", "Genero")
-                .help("Tipo de recomendacion");
+        parser.addArgument("operacion")
+                .type(String.class).required(true).choices("Aleatorio", "Genero", "Filtro")
+                .help("Tipo de operacion a realizar");
+        parser.addArgument("generoAFiltrar")
+                .type(String.class).required(false).setDefault("ESOTERISMO").choices("ESOTERISMO", "HUMANISMO", "MOTIVACION PERSONAL", "FICCION Y LITERATURA")
+                .help("Tipo de genero a filtrar");
 
         Namespace res = null;
         try {
@@ -61,28 +76,35 @@ public class Main {
         ParserCSV archivoLibro = new ParserCSV(Arrays.asList(new String[]{"Cod", "Nombre del libro", "Autor", "Genero", "Precio"}));
         ArrayList<Libro>  libros = archivoLibro.leerArchivoLibro(res.getString("pathLibros"));
         log.info("Lectura exitosa");
-        log.debug("Se inicia lectura del archivo lector...");
-        ParserCSV archivoLectores = new ParserCSV(Arrays.asList(new String[]{"Codigo", "Apellido", "Nombre", "Libros Leidos"}));
-        ArrayList<Lector>  lectores = archivoLectores.leerArchivoLectores(libros, res.getString("pathLectores"));
-        log.info("Lectura exitosa");
-        ArrayList<Recomendador> recomendaciones = new ArrayList<>();    //Coleccion de recomendaciones.
-        log.debug("Inicia creacion de recomendaciones..");
-        for (Lector lector : lectores) {                                  //Recorre los lectores para hacer la recomendacion a cada uno.
-            Recomendador recomienda = new Recomendador(lector, libros); //Genera la recomendacion.
-            if (res.getString("tipoRecomendador").equals("Genero")) {
-                try{
-                    recomienda.recomendarGenero(libros);
-                }catch (NoHayRecomendaciones e){
-                    log.error("Fallo en la recomendacion");
-                    System.out.println("No hay recomendaciones");
-                }
+        if (res.getString("operacion").equals("Filtro")) {
+            Recomendador filtrado = new Recomendador();
+            filtrado.filtrarGenero(res.getString("generoAFiltrar"), libros);
+            imprimirFiltrado(filtrado, res.getString("pathRecomendaciones"), res.getString("generoAFiltrar"));
 
-            }else if(res.getString("tipoRecomendador").equals("Aleatorio")){
-                recomienda.recomendarAleatorio(libros);
+        }else{
+            log.debug("Se inicia lectura del archivo lector...");
+            ParserCSV archivoLectores = new ParserCSV(Arrays.asList(new String[]{"Codigo", "Apellido", "Nombre", "Libros Leidos"}));
+            ArrayList<Lector> lectores = archivoLectores.leerArchivoLectores(libros, res.getString("pathLectores"));
+            log.info("Lectura exitosa");
+            ArrayList<Recomendador> recomendaciones = new ArrayList<>();    //Coleccion de recomendaciones.
+            log.debug("Inicia creacion de recomendaciones..");
+            for (Lector lector : lectores) {                                  //Recorre los lectores para hacer la recomendacion a cada uno.
+                Recomendador recomienda = new Recomendador(lector); //Genera la recomendacion.
+                if (res.getString("operacion").equals("Genero")) {
+                    try {
+                        recomienda.recomendarGenero(libros);
+                    } catch (NoHayRecomendaciones e) {
+                        log.error("Fallo en la recomendacion");
+                        System.out.println("No hay recomendaciones");
+                    }
+
+                } else if (res.getString("operacion").equals("Aleatorio")) {
+                    recomienda.recomendarAleatorio(libros);
+                }
+                recomendaciones.add(recomienda);                            //Agrega la recomendacion a la coleccion.
             }
-            recomendaciones.add(recomienda);                            //Agrega la recomendacion a la coleccion.
+            imprimirRecomendaciones(recomendaciones, res.getString("pathRecomendaciones"));                       //Vuelca las recomendaciones a un archivo.*/
+            log.info("El archivo recomendaciones fue creado con exito");
         }
-        imprimirRecomendaciones(recomendaciones, res.getString("pathRecomendaciones"));                       //Vuelca las recomendaciones a un archivo.*/
-        log.info("El archivo recomendaciones fue creado con exito");
     }
 }

@@ -12,3 +12,166 @@
 2021-12-27 16:56:32.114 [main] ERROR ar.edu.utn.Recomendador - El lector Ruiz, Francisco no posee recomendaciones.
 2021-12-27 16:56:32.114 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
 2021-12-27 16:56:32.114 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector JUAREZ, MARIA FLORENCIA con exito.
+2021-12-27 17:16:19.283 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: too few arguments
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1075) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:53) [classes/:?]
+2021-12-27 17:17:01.182 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:17:01.188 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:17:01.189 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 17:17:01.190 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:17:01.190 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 17:17:01.191 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:17:01.191 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Ruiz, Juan con exito.
+2021-12-27 17:17:01.191 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:17:01.191 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Tolengo, Jhony con exito.
+2021-12-27 17:17:01.191 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:17:01.191 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Ramirez, Jose con exito.
+2021-12-27 17:17:01.192 [main] INFO  ar.edu.utn.Main - El archivo recomendaciones fue creado con exito
+2021-12-27 17:28:50.039 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: too few arguments
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1075) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:30:11.254 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: too few arguments
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1075) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:30:58.182 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: too few arguments
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1075) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:31:09.197 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:31:09.203 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:31:09.203 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 17:31:09.204 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:31:09.204 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 17:32:22.598 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:32:22.605 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:32:22.605 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 17:32:22.606 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:32:22.606 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 17:32:41.374 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:32:41.380 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:32:41.381 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:34:39.695 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:34:39.702 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:34:39.703 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:35:10.344 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:35:10.351 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:35:10.352 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:36:23.243 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:36:23.250 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:36:23.251 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:38:45.012 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:38:45.018 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:38:45.019 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:39:30.948 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:39:30.956 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:39:30.958 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:40:06.510 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:40:06.518 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:40:06.519 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:40:14.785 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: too few arguments
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1075) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:40:23.816 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: too few arguments
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1075) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:40:47.435 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: too few arguments
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1075) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:41:01.873 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: argument generoAFiltrar: invalid choice: 'asd' (choose from {ESOTERISMO,HUMANISMO,MOTIVACION PERSONAL,FICCION Y LITERATURA})
+	at net.sourceforge.argparse4j.internal.ArgumentImpl.convert(ArgumentImpl.java:290) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1089) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:41:13.956 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:41:13.962 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:41:13.963 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:41:47.928 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:41:47.936 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:41:47.937 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:46:49.056 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 17:46:49.056 [main] INFO  ar.edu.utn.Recomendador - El filtrado se realizo con exito
+2021-12-27 17:50:49.688 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:50:49.695 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:50:49.695 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 17:50:49.696 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:50:49.696 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 17:51:00.010 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:51:00.020 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:51:00.020 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 17:51:00.021 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:51:00.021 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 17:51:00.022 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:51:00.023 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Ruiz, Juan con exito.
+2021-12-27 17:51:00.023 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:51:00.023 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Tolengo, Jhony con exito.
+2021-12-27 17:51:00.023 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:51:00.023 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Ramirez, Jose con exito.
+2021-12-27 17:51:00.024 [main] INFO  ar.edu.utn.Main - El archivo recomendaciones fue creado con exito
+2021-12-27 17:52:40.707 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: argument operacion: invalid choice: 'Alatorio' (choose from {Aleatorio,Genero,Filtro})
+	at net.sourceforge.argparse4j.internal.ArgumentImpl.convert(ArgumentImpl.java:290) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1089) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:53:02.051 [main] ERROR ar.edu.utn.Main - Algun/os de los argumentos son erroneos
+net.sourceforge.argparse4j.inf.ArgumentParserException: argument operacion: invalid choice: 'Alatorio' (choose from {Aleatorio,Genero,Filtro})
+	at net.sourceforge.argparse4j.internal.ArgumentImpl.convert(ArgumentImpl.java:290) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.processPositionalArgs(ArgumentParserImpl.java:1089) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:876) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgsAtOffsetZero(ArgumentParserImpl.java:703) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:572) ~[argparse4j-0.9.0.jar:?]
+	at net.sourceforge.argparse4j.internal.ArgumentParserImpl.parseArgs(ArgumentParserImpl.java:557) ~[argparse4j-0.9.0.jar:?]
+	at ar.edu.utn.Main.main(Main.java:68) [classes/:?]
+2021-12-27 17:53:11.971 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 17:53:11.979 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:53:11.979 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 17:53:11.981 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 17:53:11.981 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 17:53:11.983 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:53:11.983 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Ruiz, Juan con exito.
+2021-12-27 17:53:11.983 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:53:11.983 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Tolengo, Jhony con exito.
+2021-12-27 17:53:11.983 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 17:53:11.984 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Ramirez, Jose con exito.
+2021-12-27 17:53:11.984 [main] INFO  ar.edu.utn.Main - El archivo recomendaciones fue creado con exito

@@ -11,9 +11,14 @@ public class Recomendador {
     private Lector lector;
     private ArrayList<Libro> recomendaciones;
 
-    public Recomendador(Lector lector, ArrayList<Libro> libros) {
+    public Recomendador(Lector lector) {
         this.lector = lector;
         this.recomendaciones = new ArrayList<Libro>(); //Coleccion de libros recomendados para el lector.
+    }
+
+    public Recomendador() {
+        this.lector = null;
+        this.recomendaciones = null; //Coleccion de libros recomendados para el lector.
     }
 
     public Lector getLector() {
@@ -22,6 +27,18 @@ public class Recomendador {
 
     public ArrayList<Libro> getRecomendaciones() {
         return recomendaciones;
+    }
+
+    public void filtrarGenero(String generoAFiltrar, ArrayList<Libro> libros){
+        log.debug("Inicia proceso de filtrado");
+        ArrayList<Libro> librosFiltrado = new ArrayList<>();
+        for(Libro l: libros){
+            if(l.getGenero().equals(generoAFiltrar)){
+                librosFiltrado.add(l);
+            }
+        }
+        setRecomendaciones(librosFiltrado);
+        log.info("El filtrado se realizo con exito");
     }
 
     public void recomendarGenero(ArrayList<Libro> libros) throws NoHayRecomendaciones{
