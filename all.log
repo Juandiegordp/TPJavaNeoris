@@ -175,3 +175,47 @@ net.sourceforge.argparse4j.inf.ArgumentParserException: argument operacion: inva
 2021-12-27 17:53:11.983 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
 2021-12-27 17:53:11.984 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Ramirez, Jose con exito.
 2021-12-27 17:53:11.984 [main] INFO  ar.edu.utn.Main - El archivo recomendaciones fue creado con exito
+2021-12-27 18:23:19.805 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 18:23:19.811 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 18:23:19.811 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 18:23:19.812 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 18:23:19.812 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 18:23:19.813 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 18:23:19.814 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Ruiz, Juan con exito.
+2021-12-27 18:23:19.814 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 18:23:19.814 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Tolengo, Jhony con exito.
+2021-12-27 18:23:19.814 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 18:23:19.814 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Ramirez, Jose con exito.
+2021-12-27 18:23:19.815 [main] INFO  ar.edu.utn.Main - El archivo recomendaciones fue creado con exito
+2021-12-27 19:11:12.797 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 19:11:12.803 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 19:11:12.804 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 19:11:12.804 [main] INFO  ar.edu.utn.Recomendador - El filtrado se realizo con exito
+2021-12-27 19:20:01.936 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 19:20:01.942 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 19:20:01.943 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de filtrado
+2021-12-27 19:20:01.944 [main] INFO  ar.edu.utn.Recomendador - El filtrado se realizo con exito
+2021-12-27 19:20:53.531 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 19:20:53.539 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 19:20:53.540 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 19:20:53.541 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 19:20:53.541 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 19:20:53.543 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 19:20:53.543 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Ruiz, Juan con exito.
+2021-12-27 19:20:53.543 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 19:20:53.544 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Tolengo, Jhony con exito.
+2021-12-27 19:20:53.544 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 19:20:53.544 [main] INFO  ar.edu.utn.Recomendador - Se obtuvo la recomendacion para el lector Ramirez, Jose con exito.
+2021-12-27 19:20:53.545 [main] INFO  ar.edu.utn.Main - El archivo recomendaciones fue creado con exito
+2021-12-27 19:21:51.202 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo de libros...
+2021-12-27 19:21:51.211 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 19:21:51.211 [main] DEBUG ar.edu.utn.Main - Se inicia lectura del archivo lector...
+2021-12-27 19:21:51.213 [main] INFO  ar.edu.utn.Main - Lectura exitosa
+2021-12-27 19:21:51.213 [main] DEBUG ar.edu.utn.Main - Inicia creacion de recomendaciones..
+2021-12-27 19:21:51.214 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 19:21:51.214 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Ruiz, Juan con exito.
+2021-12-27 19:21:51.214 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 19:21:51.214 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Tolengo, Jhony con exito.
+2021-12-27 19:21:51.214 [main] DEBUG ar.edu.utn.Recomendador - Inicia proceso de recomendacion
+2021-12-27 19:21:51.214 [main] INFO  ar.edu.utn.Recomendador - Se obtuvieron las recomendaciones por genero para el lector Ramirez, Jose con exito.
+2021-12-27 19:21:51.215 [main] INFO  ar.edu.utn.Main - El archivo recomendaciones fue creado con exito

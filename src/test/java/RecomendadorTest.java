@@ -56,11 +56,6 @@ public class RecomendadorTest {
 
     @Test(expected = NoHayRecomendaciones.class)
     public void testNoHayRecomendaciones() throws Exception {
-        ArrayList<Libro> librosleidos = new ArrayList<>();
-        librosleidos.add(this.libro1);
-        librosleidos.add(this.libro2);
-        librosleidos.add(this.libro3);
-        librosleidos.add(this.libro4);
         noRecom.recomendarGenero(libros);
     }
 
